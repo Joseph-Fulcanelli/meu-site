@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Group | Luxo & Defesa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Fundo de Mosaico Abstrato em Camadas -->
+    <div class="mosaic-background">
+        <div class="mosaic-shape shape-1"></div>
+        <div class="mosaic-shape shape-2"></div>
+        <div class="mosaic-shape shape-3"></div>
+    </div>
+
+    <!-- Barra de Navegação -->
+    <nav class="navbar">
+        <div class="logo">⚜️ AURA GROUP</div>
+        <ul class="menu">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#divisoes">Divisões</a></li>
+            <li><a href="#trajetoria">História</a></li>
+            <li><a href="#faq">Ajuda</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- Âncora de Início -->
+    <div id="inicio"></div>
+
+    <!-- Botão Voltar ao Topo -->
+    <button class="btn-subir oculto" id="btnSubir" onclick="subirAoInicio()" title="Voltar ao início">
+        ⬆️
+    </button>
+
+    <!-- Seção de Boas-Vindas -->
+    <section class="boas-vindas">
+        <div class="bv-texto">
+            <span class="bv-tag">FUNDADA EM 1874</span>
+            <h1>Engenharia de Precisão sem Limites 🏎️🛡️</h1>
+            <p>Do luxo absoluto à robustez tática de defesa. Conheça as duas divisões exclusivas do conglomerado de engenharia global.</p>
+            <button class="btn-primario" onclick="document.getElementById('divisoes').scrollIntoView({behavior: 'smooth'})">Explorar Divisões</button>
+        </div>
+        <div class="bv-imagem">
+            <img src="https://picsum.photos/id/111/500/400" alt="Veículo de Alta Engenharia">
+        </div>
+    </section>
+
+    <!-- Seção de Abas: Veículos de Luxo vs Veículos Militares -->
+    <section id="divisoes" class="conteudo-longo">
+        <h2>Nossas Divisões</h2>
+        <p>Selecione o setor para visualizar o portfólio especializado.</p>
+
+        <!-- Botões das Abas -->
+        <div class="abas-container">
+            <button class="aba-btn ativa" onclick="mudarAba('luxo')">🏎️ Divisão de Luxo (Aura Motors)</button>
+            <button class="aba-btn" onclick="mudarAba('militar')">🛡️ Divisão de Defesa (Aura Defense)</button>
+        </div>
+
+        <!-- Conteúdo da Aba: Luxo -->
+        <div id="conteudo-luxo" class="conteudo-aba ativo">
+            <div class="carrossel">
+                <img id="slide-luxo" src="https://picsum.photos/id/1075/800/400" alt="Supercarro de Luxo">
+                <button class="btn-car prev" onclick="mudarSlideLuxo(-1)">‹</button>
+                <button class="btn-car next" onclick="mudarSlideLuxo(1)">›</button>
+            </div>
+            <p style="text-align:center; color:#b0b0b0; font-size:0.85rem; margin-top:10px;">
+                Modelo de Luxo <span id="atual-luxo">1</span> de 3
+            </p>
+            <div style="margin-top: 20px; text-align: left; background: rgba(15,15,15,0.9); padding: 25px; border-radius: 12px; border: 1px solid rgba(255, 215, 0, 0.25);">
+                <h3 style="color: #ffd700; margin-top: 0;">Aura Motors - Alto Padrão</h3>
+                <p style="color: #b0b0b0; font-size: 0.95rem; line-height: 1.6;">Projetados para colecionadores e entusiastas do automobilismo mundial. Hipercarros artesanais com acabamento em ouro, fibra de carbono e motores V12 de altíssima performance.</p>
+            </div>
+        </div>
+
+        <!-- Conteúdo da Aba: Militar -->
+        <div id="conteudo-militar" class="conteudo-aba">
+            <div class="carrossel">
+                <img id="slide-militar" src="https://picsum.photos/id/1048/800/400" alt="Veículo Militar Tático">
+                <button class="btn-car prev" onclick="mudarSlideMilitar(-1)">‹</button>
+                <button class="btn-car next" onclick="mudarSlideMilitar(1)">›</button>
+            </div>
+            <p style="text-align:center; color:#b0b0b0; font-size:0.85rem; margin-top:10px;">
+                Veículo Tático <span id="atual-militar">1</span> de 3
+            </p>
+            <div style="margin-top: 20px; text-align: left; background: rgba(15,15,15,0.9); padding: 25px; border-radius: 12px; border: 1px solid rgba(255, 215, 0, 0.25);">
+                <h3 style="color: #ffd700; margin-top: 0;">Aura Defense - Blindagem e Tática</h3>
+                <p style="color: #b0b0b0; font-size: 0.95rem; line-height: 1.6;">Desenvolvidos para operações severas, escoltas de alto risco e missões de segurança nacional. Veículos táticos com blindagem balística avançada nível STANAG e autonomia extrema em terrenos hostiles.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline / Trajetória da Marca com Hover do Criador -->
+    <section id="trajetoria" class="conteudo-longo" style="padding-top: 10px;">
+        <h2>Nossa Trajetória</h2>
+        <p>Séculos de inovação na mecânica pesada e alta sofisticação.</p>
+
+        <div class="timeline">
+            <!-- Item com o Hover do Criador -->
+            <div class="tl-item criador-container">
+                <div class="tl-ponto"></div>
+                <div class="tl-conteudo">
+                    <span class="tl-data">1874</span>
+                    <h3>Fundação do Conglomerado</h3>
+                    <p>Início das operações voltadas à mecânica de precisão, fabricação de chassis robustos e carrocerias de alta resistência.</p>
+                    
+                    <!-- Elemento Hover Revelando o Criador -->
+                    <div class="criador-card-hover">
+                        <h4>Mente Visionária</h4>
+                        <p>Fundada por <strong>Joseph Fulcanelli</strong>, um gênio da engenharia mecânica e precursos de projetos estruturais tanto para carruagens de gala quanto para veículos de patrulha pesada.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tl-item">
+                <div class="tl-ponto"></div>
+                <div class="tl-conteudo">
+                    <span class="tl-data">1914</span>
+                    <h3>Divisão Tática Inicial</h3>
+                    <p>Fornecimento de veículos reforçados para suporte logístico e transporte em estradas acidentadas durante conflitos históricos.</p>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-ponto"></div>
+                <div class="tl-conteudo">
+                    <span class="tl-data">1965</span>
+                    <h3>Era do Luxo Esportivo</h3>
+                    <p>Consagração definitiva da divisão Aura Motors no desenvolvimento de coupés esportivos de luxo para elites globais.</p>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-ponto"></div>
+                <div class="tl-conteudo">
+                    <span class="tl-data">2026</span>
+                    <h3>Inovação Dual</h3>
+                    <p>Integração de inteligência artificial de navegação autônoma em frotas civis de luxo e veículos táticos de defesa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção FAQ e Contato -->
+    <section id="faq" class="faq">
+        <h2>Perguntas Frequentes</h2>
+        <div class="faq-lista">
+            <div class="faq-item">
+                <button class="faq-p" onclick="toggleFaq(this)">Como adquirir veículos da Divisão Militar? <span>▼</span></button>
+                <div class="faq-r"><p>A aquisição de frotas ou veículos táticos da Aura Defense exige homologação governamental, checagem de credenciamento e contratos de uso institucional ou de segurança autorizada.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-p" onclick="toggleFaq(this)">Os carros de luxo são customizáveis? <span>▼</span></button>
+                <div class="faq-r"><p>Sim. Cada cliente da Aura Motors possui um ateliê privativo para customização de interiores, blindagem discreta opcional e escolha de ligas metálicas exclusivas.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-p" onclick="toggleFaq(this)">A empresa presta manutenção global? <span>▼</span></button>
+                <div class="faq-r"><p>Sim, possuímos equipes técnicas volantes certificadas prontas para atendimento prioritário em qualquer continente.</p></div>
+            </div>
+        </div>
+
+        <div id="contato" class="card-contato">
+            <h2>⚜️ Central Executiva e Institucional</h2>
+            <p>Selecione sua divisão de interesse e envie sua mensagem.</p>
+            <div class="linha-campos">
+                <div>
+                    <label>Nome / Instituição</label>
+                    <input type="text" placeholder="Seu nome ou nome da organização">
+                </div>
+                <div>
+                    <label>E-mail Oficial</label>
+                    <input type="email" placeholder="contato@dominio.com">
+                </div>
+            </div>
+            <label>Setor de Destino</label>
+            <input type="text" placeholder="Ex: Divisão de Luxo / Aura Defense">
+            <label>Mensagem</label>
+            <textarea placeholder="Detalhe sua demanda corporativa ou particular..." rows="5"></textarea>
+            <button class="btn-enviar">ENVIAR SOLICITAÇÃO</button>
+        </div>
+    </section>
+
+    <!-- Rodapé Completo -->
+    <footer class="footer-completo">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">⚜️ AURA GROUP</div>
+                <p>Excelência dividida entre o luxo intransigente e a máxima segurança tática.</p>
+                <div class="footer-redes">
+                    <a href="#" title="Facebook">📘</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="Twitter">🐦</a>
+                    <a href="#" title="LinkedIn">💼</a>
+                    <a href="#" title="WhatsApp">💬</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Aura Motors (Luxo)</h4>
+                <a href="#">Hipercarros</a>
+                <a href="#">Conversíveis</a>
+                <a href="#">Edições Limitadas</a>
+                <a href="#">Ateliê de Cores</a>
+            </div>
+            <div class="footer-col">
+                <h4>Aura Defense (Militar)</h4>
+                <a href="#">Veículos Táticos 4x4</a>
+                <a href="#">Blindagem Balística</a>
+                <a href="#">Logística de Terreno</a>
+                <a href="#">Suporte Institucional</a>
+            </div>
+            <div class="footer-col">
+                <h4>Governança</h4>
+                <a href="#">Compliance</a>
+                <a href="#">Certificações ISO</a>
+                <a href="#">Carreiras</a>
+                <a href="#">Imprensa</a>
+            </div>
+        </div>
+        <div class="footer-copy">
+            © 1874 - 2026 Aura Group. Todos os direitos reservados. Fundada por Joseph Fulcanelli.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
